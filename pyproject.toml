@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mangadl-cli"
+version = "1.2.0"
+description = "A fast CLI manga downloader for weebcentral.com with Per-Chapter, All-in-One, and Volume (*) output in CBZ, PDF, and Images."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "aydinAGF" }]
+requires-python = ">=3.8"
+keywords = ["manga", "downloader", "weebcentral", "cli", "cbz", "pdf", "aria2c", "termux"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "Pillow>=9.0.0",
+]
+
+[project.scripts]
+mangadl = "mangadl.cli:main"
+
+[project.urls]
+Repository = "https://github.com/aydinAGF/mangadl-cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mangadl*"]
